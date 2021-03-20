@@ -11,9 +11,11 @@ const consulta = async(params) => {
     return json
 }
 
-const getWeatherInfo = async(cityName) => {
-    const items = await consulta(`?format=json-cors&key=${API_KEY}&city_name=${cityName}`)
-    return JSON.stringify(items)
+export default {
+    getWeatherInfo: async(cityName) => {
+        return [{
+            slug: 'city_name',
+            items: await consulta(`?format=json-cors&key=${API_KEY}&city_name=${cityName}`)
+        }]
+    }
 }
-
-export default getWeatherInfo
