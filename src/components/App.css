@@ -4,6 +4,9 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Lato', sans-serif;
+    transition: ease;
+    transition-duration: 0.5s;
+    letter-spacing: 3;
 }
 
 .body {
@@ -12,5 +15,4 @@
     width: 100vw;
     height: 100vh;
     background-color: #cfddff;
-    letter-spacing: 3;
 }

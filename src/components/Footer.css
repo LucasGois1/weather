@@ -1,10 +1,21 @@
 footer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     height: 140px;
     width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+}
+
+footer img {
+    width: 80px;
+    border-radius: 50%;
+    background-position: center;
+    border: black 1px solid;
+    box-shadow: black 5px 5px 5px;
 }
 
 .footer-content {

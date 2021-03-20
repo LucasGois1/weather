@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import HGWeather from '../hgWeather'
+import List from './List'
 import './Search.css'
 
 
@@ -10,6 +11,8 @@ const Search = (props) => {
     const [city, setCity] = useState('')
     const [temp, setTemp] = useState('')
     const [condition, setCondition] = useState('')
+    const [description, setDescription] = useState('')
+    const [days, setDays] = useState()
     const [userChoice, setUserChoice] = useState('')
     //Controle do input, adiciona letra por letra em userChoice
     const inputHandle = (e) => {
@@ -22,21 +25,29 @@ const Search = (props) => {
             return {
                 city: item.items.results.city,
                 temp: item.items.results.temp,
-                slug: item.items.results.condition_code
+                slug: item.items.results.condition_code,
+                desc: item.items.results.description,
+                days: item.items.results.forecast
             }
         })
         setCity(newInfo.map((item) => item.city))
         setTemp(newInfo.map((item) => item.temp))
         setCondition(newInfo.map((item) => item.slug))
-        console.log(city)
+        setDescription(newInfo.map((item) => item.desc))
+        setDays(newInfo.map((item) => item.days))
     }
+    //
     return (
         <section>
             <div className="search-area">
                 <label>
-                    <h1>Qual cidade<br /> você está procurando?</h1>
+                    <h1>
+                        Qual cidade<br /> você está procurando?
+                    </h1>
                     <input type="text" name="search" placeholder="Ex: São Paulo" value={userChoice} onChange={inputHandle} />
-                    <button onClick={getInfo}>Buscar</button>
+                    <button onClick={getInfo}>
+                        Buscar
+                    </button>
                 </label>
 
             </div>
@@ -48,26 +59,28 @@ const Search = (props) => {
                             <div className="card-title-area">
 
                                 <div className="card-title">
-                                    <h1>{city}</h1>
+                                    <h1>
+                                        {city}
+                                    </h1>
                                 </div>
                                 <div className="info-temp">
                                     <img src={`assets/icons/png/99.png`} width="30" height="30" alt="weather" />
-                                    <h2>{`${temp}ºC`}</h2>
+                                    <h2>
+                                        {`${temp}ºC`}
+                                    </h2>
                                 </div>
                             </div>
 
                             <div className="card-image">
                                 <img src={`assets/icons/png/${condition}.png`} alt="weather" />
+                                <h2>
+                                    {description}
+                                </h2>
                             </div>
 
                         </div>
                         <div className="card-body">
-                            <div className="card-info">
-
-                                <div className="info-days">
-
-                                </div>
-                            </div>
+                            {days ? <List list={days}></List> : <></>}
                         </div>
                     </div>
                     : ''}

@@ -1,6 +1,6 @@
 //salvando em constantes a minha senha da api, e o endereco de busca padrao
 
-const API_KEY = '623fd16f'
+const API_KEY = 'f6c96d3f'
 const API_BASE = 'https://api.hgbrasil.com/weather'
 
 
