@@ -16,3 +16,9 @@
     height: 100vh;
     background-color: #cfddff;
 }
+
+@media only screen and (max-width: 1000px) {
+    .body {
+        height: 170vh;
+    }
+}

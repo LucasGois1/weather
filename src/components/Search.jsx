@@ -10,6 +10,7 @@ const Search = (props) => {
     //Variáveis de estado
     const [city, setCity] = useState('')
     const [temp, setTemp] = useState('')
+    const [wind, setWind] = useState('')
     const [condition, setCondition] = useState('')
     const [description, setDescription] = useState('')
     const [days, setDays] = useState()
@@ -27,7 +28,8 @@ const Search = (props) => {
                 temp: item.items.results.temp,
                 slug: item.items.results.condition_code,
                 desc: item.items.results.description,
-                days: item.items.results.forecast
+                days: item.items.results.forecast,
+                wind: item.items.results.wind_speedy
             }
         })
         setCity(newInfo.map((item) => item.city))
@@ -35,6 +37,7 @@ const Search = (props) => {
         setCondition(newInfo.map((item) => item.slug))
         setDescription(newInfo.map((item) => item.desc))
         setDays(newInfo.map((item) => item.days))
+        setWind(newInfo.map((item) => item.wind))
     }
     //
     return (
@@ -64,9 +67,15 @@ const Search = (props) => {
                                     </h1>
                                 </div>
                                 <div className="info-temp">
-                                    <img src={`assets/icons/png/99.png`} width="30" height="30" alt="weather" />
+                                    <img src={`assets/icons/png/99.png`} width="30" height="30" alt="temp" />
                                     <h2>
                                         {`${temp}ºC`}
+                                    </h2>
+                                </div>
+                                <div className="info-wind">
+                                    <img src={`assets/icons/png/98.png`} width="30" height="30" alt="wind" />
+                                    <h2>
+                                        {wind}
                                     </h2>
                                 </div>
                             </div>

@@ -59,7 +59,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 600px;
-    height: 95%;
+    height: 90%;
     padding: 20px;
     border-radius: 20px;
     background-image: linear-gradient(to right, #836dd1, #321081);
@@ -100,9 +100,18 @@ section {
     height: 80%;
 }
 
-.info-temp {
+.card-title {
+    font-size: 22px;
+}
+
+.info-temp,
+.info-wind {
     display: flex;
     flex-direction: row;
+}
+
+.info-wind h2 {
+    margin-left: 10px;
 }
 
 .card-body {
@@ -110,4 +119,10 @@ section {
     flex: 3;
     flex-direction: row;
     width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    section {
+        flex-direction: column;
+    }
 }
