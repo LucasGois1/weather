@@ -1,12 +1,21 @@
-import React from 'react'
-import './List.css'
+import React, { useState, useEffect } from 'react'
+import './style/List.css'
 
 const List = (props) => {
-    const data = props.list
+    const [data, setData] = useState()
+
+    useEffect(() => {
+        function setNewInfo(data) {
+            setData(data[0])
+        }
+        if (props.list) {
+            setNewInfo(props.list)
+        } else { setData(null) }
+    }, [props.list]);
     return (
         <div className="list-area">
-            {data[0]
-                .map((item, key) => {
+            { data ?
+                data.map((item, key) => {
                     return (
                         <div className="list-item" key={key}>
                             <div className="item-image">
@@ -24,6 +33,8 @@ const List = (props) => {
                         </div>
                     )
                 })
+                :
+                <></>
             }
         </div>
     )
