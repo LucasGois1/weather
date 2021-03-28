@@ -73,3 +73,27 @@
     flex-direction: row;
     width: 100%;
 }
+
+@media only screen and (max-width: 1000px) {
+    .result-card {
+        padding: 25px;
+        width: 90%;
+    }
+    .card-header {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card-image {
+        text-align: end;
+    }
+    .card-image img {
+        width: 120px;
+        height: 120px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-title-area {
+        align-items: flex-start;
+    }
+}

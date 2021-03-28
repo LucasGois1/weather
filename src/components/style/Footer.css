@@ -49,7 +49,7 @@ a {
 @media only screen and (max-width: 1000px) {
     footer {
         height: 120px;
-        font-size: 10px;
+        font-size: 12px;
         padding-left: 0px;
         padding-right: 0px;
         margin-bottom: 30px;
