@@ -1,41 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import List from './List'
 import './style/Result.css'
 
 
-const Result = (props) => {
-    const [city, setCity] = useState(null)
-    const [temp, setTemp] = useState(null)
-    const [wind, setWind] = useState(null)
-    const [condition, setCondition] = useState(null)
-    const [description, setDescription] = useState(null)
-    const [days, setDays] = useState(null)
-    const [data, setData] = useState([])
+const Result = () => {
+    const city = useSelector(state => state.info.city)
+    const temp = useSelector(state => state.info.temp)
+    const wind = useSelector(state => state.info.wind)
+    const condition = useSelector(state => state.info.slug)
+    const description = useSelector(state => state.info.desc)
 
-    useEffect(() => {
-        function setNewInfo(data) {
-            setData(data)
-        }
-        if (props.newInfo) {
-            setNewInfo(props.newInfo)
-        }
-    }, [props.newInfo]);
-    useEffect(() => {
-        function updateData(data) {
-            setCity(data.map((item) => item.city))
-            setTemp(data.map((item) => item.temp))
-            setCondition(data.map((item) => item.slug))
-            setDescription(data.map((item) => item.desc))
-            setDays(data.map((item) => item.days))
-            setWind(data.map((item) => item.wind))
-        }
-        if (data) {
-            updateData(data)
-        }
-
-    }, [data]);
     return (
         <div className="result-area">
+
             {city ?
                 <div className="result-card">
 
@@ -69,7 +47,7 @@ const Result = (props) => {
                         </div>
                     </div>
                     <div className="card-body">
-                        {days ? <List list={days}></List> : <></>}
+                        <List></List>
                     </div>
                 </div>
                 : ''

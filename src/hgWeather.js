@@ -13,9 +13,6 @@ const consulta = async(params) => {
 
 export default {
     getWeatherInfo: async(cityName) => {
-        return [{
-            slug: 'city_name',
-            items: await consulta(`?format=json-cors&key=${API_KEY}&city_name=${cityName}`)
-        }]
+        return await consulta(`?format=json-cors&key=${API_KEY}&city_name=${cityName}`)
     }
 }

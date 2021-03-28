@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Header from './components/Header'
 import Search from './components/Search'
 import Result from './components/Result'
@@ -6,15 +7,14 @@ import Footer from './components/Footer'
 import './components/style/App.css'
 
 const App = () => {
-    const [data, setData] = useState()
-    function selectedCity(city) {
-        setData(city)
-    }
+    const data = useSelector(state => state.info)
+
     return (
         <div className="body">
             <Header></Header>
             <section>
-                <Search loadData={selectedCity} />
+                <Search>
+                </Search>
                 {data ?
                     <Result newInfo={data}></Result>
                     :

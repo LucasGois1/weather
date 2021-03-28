@@ -1,33 +1,42 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import HGWeather from '../hgWeather'
 import './style/Search.css'
 
-const Search = (props) => {
+const Search = () => {
     //Variáveis de estado
     const [userChoice, setUserChoice] = useState('')
-    const [newCity, setNewCity] = useState()
-    useEffect(() => {
-        props.loadData(newCity)
-    }, [newCity]);
+
+    const dispatch = useDispatch()
     //Controle do input, adiciona letra por letra em userChoice
     const inputHandle = (e) => {
         setUserChoice(e.target.value)
     }
     // funcao que busca os dados na api e armazena em info
     const getInfo = async () => {
+
         const data = await HGWeather.getWeatherInfo(userChoice)
+
         if (data) {
-            let newInfo = data.map((item) => {
-                return {
-                    city: item.items.results.city,
-                    temp: item.items.results.temp,
-                    slug: item.items.results.condition_code,
-                    desc: item.items.results.description,
-                    days: item.items.results.forecast,
-                    wind: item.items.results.wind_speedy
+            const newInfo = {
+                city: data.results.city,
+                temp: data.results.temp,
+                slug: data.results.condition_code,
+                desc: data.results.description,
+                days: data.results.forecast,
+                wind: data.results.wind_speedy
+            }
+            dispatch({
+                type: 'SET_INFO',
+                payload: {
+                    city: newInfo.city,
+                    temp: newInfo.temp,
+                    slug: newInfo.slug,
+                    desc: newInfo.desc,
+                    days: newInfo.days,
+                    wind: newInfo.wind
                 }
             })
-            setNewCity(newInfo)
         } else {
             console.log("Nenhum dado encontrado")
         }

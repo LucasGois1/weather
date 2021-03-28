@@ -9,7 +9,7 @@
     padding: 20px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: black 5px 5px 5px;
+    box-shadow: black 10px 10px 10px;
     color: black;
 }
 
@@ -22,11 +22,20 @@
     align-items: center;
     font-size: 20px;
     margin-right: 30px;
+    color: #2b085c;
+    font-weight: bolder;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: rebeccapurple 5px 5px 5px;
 }
 
 .item-image img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 }
 
 .item-temp-area {
