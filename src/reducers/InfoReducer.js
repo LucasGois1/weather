@@ -10,7 +10,6 @@ const initialState = {
 const infoReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_INFO':
-
             return {
                 ...state,
                 city: action.payload.city,
@@ -20,9 +19,10 @@ const infoReducer = (state = initialState, action) => {
                 days: action.payload.days,
                 wind: action.payload.wind
             }
+        default:
             break;
+
     }
-    console.log(initialState)
     return state
 }
 

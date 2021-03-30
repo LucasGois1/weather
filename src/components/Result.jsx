@@ -13,7 +13,6 @@ const Result = () => {
 
     return (
         <div className="result-area">
-
             {city ?
                 <div className="result-card">
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import HGWeather from '../hgWeather'
+import getWeatherInfo from '../hgWeather'
+
 import './style/Search.css'
 
 const Search = () => {
@@ -15,8 +16,7 @@ const Search = () => {
     // funcao que busca os dados na api e armazena em info
     const getInfo = async () => {
 
-        const data = await HGWeather.getWeatherInfo(userChoice)
-
+        const data = await getWeatherInfo(userChoice)
         if (data) {
             const newInfo = {
                 city: data.results.city,
@@ -37,8 +37,6 @@ const Search = () => {
                     wind: newInfo.wind
                 }
             })
-        } else {
-            console.log("Nenhum dado encontrado")
         }
     }
     //

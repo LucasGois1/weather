@@ -27,17 +27,20 @@
 
 @media only screen and (max-width: 1000px) {
     .header {
+        position: fixed;
         justify-content: space-around;
         padding-left: 40px;
         padding-right: 40px;
+        height: 100px;
+        background-color: linear-gradient(to right, #836dd1, #321081)
     }
     .header-logo {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         margin-right: 0px;
     }
     .header-title {
         margin-left: 0px;
-        font-size: 13px;
+        font-size: 16px;
     }
 }
