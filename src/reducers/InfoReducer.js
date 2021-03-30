@@ -1,10 +1,10 @@
 const initialState = {
-    city: '',
-    temp: '',
-    slug: '',
-    desc: '',
-    days: '',
-    wind: ''
+    city: null,
+    temp: null,
+    slug: null,
+    desc: null,
+    days: null,
+    wind: null
 }
 
 const infoReducer = (state = initialState, action) => {

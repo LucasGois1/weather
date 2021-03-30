@@ -12,10 +12,9 @@ const Result = () => {
     const description = useSelector(state => state.info.desc)
 
     return (
-        <div className="result-area">
-            {city ?
+        city ?
+            <div className='result-area'>
                 <div className="result-card">
-
                     <div className="card-header">
                         <div className="card-title-area">
 
@@ -49,9 +48,9 @@ const Result = () => {
                         <List></List>
                     </div>
                 </div>
-                : ''
-            }
-        </div>
+            </div>
+            :
+            <></>
     )
 }
 

@@ -1,5 +1,6 @@
 //salvando em constantes a minha senha da api, e o endereco de busca padrao
 const API_BASE = 'https://api.hgbrasil.com/weather'
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
 
 // funcao basica de consultas
@@ -9,7 +10,7 @@ const consulta = async(params) => {
     return json
 }
 async function getWeatherInfo(cityName) {
-    return await consulta(`?format=json-cors&key=${process.env.REACT_APP_WEATHER_API_KEY}&city_name=${cityName}`)
+    return await consulta(`?format=json-cors&key=${API_KEY}&city_name=${cityName}`)
 }
 
 export default getWeatherInfo

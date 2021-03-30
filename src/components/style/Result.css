@@ -77,6 +77,9 @@
 }
 
 @media only screen and (max-width: 1000px) {
+    .result-area {
+        min-height: 90vh;
+    }
     .result-card {
         padding: 20px;
         height: 80vh;
