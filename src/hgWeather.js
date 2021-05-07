@@ -3,7 +3,7 @@ require('dotenv').config({ path: '.env' })
 
 //salvando em constantes a minha senha da api, e o endereco de busca padrao
 const API_BASE = 'https://api.hgbrasil.com/weather'
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY_DEV
 
 
 // funcao basica de consultas

@@ -25,15 +25,15 @@ const Result = () => {
                             </div>
                             <div className="info-temp">
                                 <img src={`assets/icons/png/99.png`} width="30" height="30" alt="temp" />
-                                <h2>
+                                <h3>
                                     {`${temp}ºC`}
-                                </h2>
+                                </h3>
                             </div>
                             <div className="info-wind">
                                 <img src={`assets/icons/png/98.png`} width="30" height="30" alt="wind" />
-                                <h2>
+                                <h3>
                                     {wind}
-                                </h2>
+                                </h3>
                             </div>
                         </div>
 

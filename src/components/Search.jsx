@@ -17,6 +17,7 @@ const Search = () => {
     const getInfo = async () => {
 
         const data = await getWeatherInfo(userChoice)
+        console.log(data.results)
         if (data) {
             const newInfo = {
                 city: data.results.city,
