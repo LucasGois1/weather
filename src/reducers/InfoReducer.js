@@ -4,7 +4,8 @@ const initialState = {
     slug: null,
     desc: null,
     days: null,
-    wind: null
+    wind: null,
+    loading: null
 }
 
 const infoReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const infoReducer = (state = initialState, action) => {
                 desc: action.payload.desc,
                 days: action.payload.days,
                 wind: action.payload.wind
+            }
+        case 'SET_LOADING':
+            return {
+                ...state,
+                loading: action.payload.loading
             }
         default:
             break;

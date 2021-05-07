@@ -74,17 +74,29 @@
 .card-body {
     display: flex;
     flex: 3;
+    z-index: 0;
     flex-direction: row;
     width: 100%;
 }
 
+.pulse-effect {
+    height: 100%;
+    width: 100px;
+    margin-left: -65px;
+    border-radius: 40px;
+    z-index: 99;
+    position: relative;
+    background: white;
+    animation: background-list 4s infinite;
+}
+
 @media only screen and (max-width: 1000px) {
     .result-area {
-        min-height: 90vh;
+        min-height: 100vh;
     }
     .result-card {
         padding: 20px;
-        height: 80vh;
+        height: 100vh;
         width: 92%;
     }
     .card-header {

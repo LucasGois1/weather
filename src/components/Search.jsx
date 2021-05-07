@@ -15,7 +15,12 @@ const Search = () => {
     }
     // funcao que busca os dados na api e armazena em info
     const getInfo = async () => {
-
+        dispatch({
+            type: 'SET_LOADING',
+            payload: {
+                loading: true
+            }
+        })
         const data = await getWeatherInfo(userChoice)
         console.log(data.results)
         if (data) {
@@ -36,6 +41,12 @@ const Search = () => {
                     desc: newInfo.desc,
                     days: newInfo.days,
                     wind: newInfo.wind
+                }
+            })
+            dispatch({
+                type: 'SET_LOADING',
+                payload: {
+                    loading: false
                 }
             })
         }
