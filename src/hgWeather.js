@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '.env' })
 
 
 //salvando em constantes a minha senha da api, e o endereco de busca padrao
